@@ -1,10 +1,10 @@
 package com.Group3.GeekText;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
 @Entity
@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Profiles {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "ProfileID")
     public int id;
     @Column(name = "Username")
     public String username;
