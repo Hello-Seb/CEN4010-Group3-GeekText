@@ -2,8 +2,12 @@ package com.Group3.GeekText;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+
+@SpringBootApplication(scanBasePackages = {"com.Group3.GeekText"})
+@EnableJpaRepositories(basePackages = {"com.Group3.GeekText"})
 public class GeekTextApplication {
 
 	public static void main(String[] args) {
