@@ -13,7 +13,7 @@ public class Profiles {
 
     @Id
     @Column(name = "ProfileID")
-    public int id;
+    public String profileID;
     @Column(name = "Username")
     public String username;
 
@@ -25,11 +25,11 @@ public class Profiles {
     public String homeAddress;
 
 
-    public int getId() {
-        return id;
+    public String getId() {
+        return profileID;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setId(String id) {
+        this.profileID = id;
     }
     public String getUsername() {
         return username;

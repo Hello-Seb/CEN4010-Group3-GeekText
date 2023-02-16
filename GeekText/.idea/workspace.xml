@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="225208db-4165-430a-b715-819b3508657f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Profiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Profiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/ProfilesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/ProfilesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/ProfilesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/ProfilesController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,11 +89,21 @@
       <workItem from="1676316474550" duration="239000" />
       <workItem from="1676316737742" duration="732000" />
       <workItem from="1676505509484" duration="6894000" />
-      <workItem from="1676517310993" duration="1108000" />
+      <workItem from="1676517310993" duration="2871000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
