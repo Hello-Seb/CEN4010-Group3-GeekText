@@ -8,18 +8,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
-public class ProfilesController {
+public class BooksController {
 
 
-    private final ProfilesRepository profilesRepository;
+    private final BooksRepository booksRepository;
 
-    public ProfilesController(ProfilesRepository profilesRepository) {
-        this.profilesRepository = profilesRepository;
+    public BooksController(BooksRepository booksRepository) {
+        this.booksRepository = booksRepository;
     }
 
-    @GetMapping("/getAllProfiles")
-    public List<Profiles> getAllProfiles() {
-        return profilesRepository.findAll();
+    @GetMapping("/getAllBooks")
+    public List<Books> getAllBooks() {
+        return booksRepository.findAll();
     }
     @GetMapping("/helloWorld")
     public String helloWorld(){

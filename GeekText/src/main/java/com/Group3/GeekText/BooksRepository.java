@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProfilesRepository extends CrudRepository<Profiles, Integer> {
-    List<Profiles> findAll();
+public interface BooksRepository extends CrudRepository<Books, Integer> {
+    List<Books> findAll();
 }
