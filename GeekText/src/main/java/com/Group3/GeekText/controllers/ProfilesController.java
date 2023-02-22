@@ -1,5 +1,7 @@
-package com.Group3.GeekText;
+package com.Group3.GeekText.controllers;
 
+import com.Group3.GeekText.repositories.ProfilesRepository;
+import com.Group3.GeekText.entities.Profiles;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

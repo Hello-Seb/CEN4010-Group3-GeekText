@@ -1,5 +1,6 @@
-package com.Group3.GeekText;
+package com.Group3.GeekText.repositories;
 
+import com.Group3.GeekText.entities.Profiles;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
