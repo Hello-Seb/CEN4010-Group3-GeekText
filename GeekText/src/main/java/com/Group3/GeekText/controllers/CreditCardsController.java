@@ -1,5 +1,7 @@
-package com.Group3.GeekText.CreditCards;
+package com.Group3.GeekText.controllers;
 
+import com.Group3.GeekText.repositories.CreditCardsRepository;
+import com.Group3.GeekText.entities.CreditCards;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

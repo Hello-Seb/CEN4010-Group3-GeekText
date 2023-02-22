@@ -1,4 +1,4 @@
-package com.Group3.GeekText.Profiles;
+package com.Group3.GeekText.entities;
 
 
 import jakarta.persistence.Column;
