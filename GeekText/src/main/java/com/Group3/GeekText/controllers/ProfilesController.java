@@ -2,9 +2,9 @@ package com.Group3.GeekText.controllers;
 
 import com.Group3.GeekText.repositories.ProfilesRepository;
 import com.Group3.GeekText.entities.Profiles;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -28,6 +28,13 @@ public class ProfilesController {
         return "Hello World!";
     }
 
+    /*
+    @RequestMapping(value = "/createProfile" , method = RequestMethod.POST)
+    public @ResponseBody Profiles save(@RequestBody Profiles jsonString) {
 
+        Profiles profile=personService.savedata(jsonString);
+        return profile;
+    }
+*/
 
 }

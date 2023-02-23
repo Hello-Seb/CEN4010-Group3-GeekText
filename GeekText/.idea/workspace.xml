@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="225208db-4165-430a-b715-819b3508657f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/CreditCards/CreditCards.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/CreditCards/CreditCardsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/CreditCards/CreditCardsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Profiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Profiles/Profiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/ProfilesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Profiles/ProfilesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/ProfilesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Profiles/ProfilesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/Profiles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/ProfilesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/ProfilesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/controllers/ProfilesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/controllers/ProfilesController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sebastianbarnes/Documents/GitHub/CEN4010-Group3-GeekText/GeekText/src/main/java/com/Group3/GeekText/CreditCards",
+    "last_opened_file_path": "/Users/sebastianbarnes/Documents/GitHub/CEN4010-Group3-GeekText/GeekText",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,6 +95,7 @@
       <workItem from="1676505509484" duration="6894000" />
       <workItem from="1676517310993" duration="2871000" />
       <workItem from="1676671840416" duration="1770000" />
+      <workItem from="1677104194959" duration="4200000" />
     </task>
     <servers />
   </component>
