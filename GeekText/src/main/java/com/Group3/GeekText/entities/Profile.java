@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Profiles")
-public class Profiles {
+public class Profile {
 
     @Id
     @Column(name = "ProfileID")
@@ -23,6 +23,7 @@ public class Profiles {
     public String emailAddress;
     @Column(name = "HomeAddress")
     public String homeAddress;
+
 
 
     public String getId() {
@@ -58,5 +59,7 @@ public class Profiles {
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
     }
+
+
 
 }
