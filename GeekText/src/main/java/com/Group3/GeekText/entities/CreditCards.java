@@ -17,11 +17,11 @@ public class CreditCards {
 
     @Column(name = "Name")
     public String name;
-
     @Column(name = "CVV")
     public int cvv;
 
 
+    /*
     public String getCreditCardNumber() {
         return creditCardNumber;
     }
@@ -41,5 +41,7 @@ public class CreditCards {
     public void setName(String name) {
         this.name = name;
     }
+
+    */
 
 }

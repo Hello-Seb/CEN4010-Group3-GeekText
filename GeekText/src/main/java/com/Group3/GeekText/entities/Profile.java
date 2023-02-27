@@ -1,19 +1,18 @@
 package com.Group3.GeekText.entities;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 
 @Entity
 @Table(name = "Profiles")
-public class Profiles {
+public class Profile {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //private Long id;
     @Column(name = "ProfileID")
-    public String profileID;
+    private Long id;
     @Column(name = "Username")
     public String username;
 
@@ -25,11 +24,11 @@ public class Profiles {
     public String homeAddress;
 
 
-    public String getId() {
-        return profileID;
-    }
-    public void setId(String id) {
-        this.profileID = id;
+    public long getProfileID() {
+    return id;
+}
+    public void setProfileID(long id) {
+        this.id = id;
     }
     public String getUsername() {
         return username;
@@ -58,5 +57,7 @@ public class Profiles {
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
     }
+
+
 
 }
