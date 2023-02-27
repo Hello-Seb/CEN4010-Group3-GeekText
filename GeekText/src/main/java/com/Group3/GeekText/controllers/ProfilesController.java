@@ -5,7 +5,7 @@ import com.Group3.GeekText.entities.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.Group3.GeekText.services.ProfileService;
+
 
 
 import java.util.ArrayList;
@@ -31,13 +31,24 @@ public class ProfilesController {
         return "Hello World!";
     }
 
-    @RequestMapping(value = "/profiles/{id}", method = RequestMethod.POST)
-    public List<Profile>
-    createProfile(@RequestBody Profile profile) {
+//    @RequestMapping(value = "/profiles/{id}", method = RequestMethod.POST)
+//    public List<Profile>
+//    createProfile(@RequestBody Profile profile) {
+//
+//        ProfileService.createProfile(profile);
+//
+//        return new ArrayList<>();
+//    }
 
-        ProfileService.createProfile(profile);
-
-        return new ArrayList<>();
+    @PostMapping("/profiles")
+    public void postProfile(@RequestBody Profile profile) {
+        Profile newProfile = new Profile();
+        newProfile.setProfileID(profile.getProfileID());
+        newProfile.setUsername(profile.getUsername());
+        newProfile.setName(profile.getName());
+        newProfile.setEmailAddress(profile.getEmailAddress());
+        newProfile.setHomeAddress(profile.getHomeAddress());
+        profilesRepository.save(newProfile);
     }
 
 
