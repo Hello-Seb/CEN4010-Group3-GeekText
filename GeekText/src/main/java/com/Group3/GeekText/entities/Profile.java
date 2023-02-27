@@ -24,13 +24,6 @@ public class Profile {
     public String homeAddress;
 
 
-
-//    public String getId() {
-//        return profileID;
-//    }
-//    public void setId(String id) {
-//        this.profileID = id;
-//    }
     public long getProfileID() {
     return id;
 }
