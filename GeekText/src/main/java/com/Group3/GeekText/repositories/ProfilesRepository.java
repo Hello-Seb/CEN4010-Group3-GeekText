@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface ProfilesRepository extends CrudRepository<Profile, Integer> {
     List<Profile> findAll();
+
+    //Profile findByID(long id);
 }

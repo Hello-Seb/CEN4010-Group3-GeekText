@@ -26,19 +26,17 @@ public class ProfilesController {
     public List<Profile> getAllProfiles() {
         return profilesRepository.findAll();
     }
+
+//    @GetMapping("/profiles/{id}")
+//    public ResponseEntity<Profile> findProfileID(long id) {
+//        Profile profile = profilesRepository.findByID(id);
+//        return ResponseEntity.ok(profile);
+//    }
+
     @GetMapping("/helloWorld")
     public String helloWorld(){
         return "Hello World!";
     }
-
-//    @RequestMapping(value = "/profiles/{id}", method = RequestMethod.POST)
-//    public List<Profile>
-//    createProfile(@RequestBody Profile profile) {
-//
-//        ProfileService.createProfile(profile);
-//
-//        return new ArrayList<>();
-//    }
 
     @PostMapping("/profiles")
     public void postProfile(@RequestBody Profile profile) {
@@ -50,6 +48,9 @@ public class ProfilesController {
         newProfile.setHomeAddress(profile.getHomeAddress());
         profilesRepository.save(newProfile);
     }
+
+
+
 
 
 }

@@ -10,9 +10,9 @@ public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //private Long id;
+    //private Long internalID;
     @Column(name = "ProfileID")
-    private Long id;
+    private long profileID;
     @Column(name = "Username")
     public String username;
 
@@ -24,12 +24,11 @@ public class Profile {
     public String homeAddress;
 
 
-    public long getProfileID() {
-    return id;
-}
-    public void setProfileID(long id) {
-        this.id = id;
+    public long getProfileID() {return profileID;}
+    public void setProfileID(long profileID) {
+        this.profileID = profileID;
     }
+
     public String getUsername() {
         return username;
     }
