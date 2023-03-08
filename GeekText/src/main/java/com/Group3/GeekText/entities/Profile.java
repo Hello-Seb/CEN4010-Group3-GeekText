@@ -1,6 +1,7 @@
 package com.Group3.GeekText.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 
@@ -9,9 +10,10 @@ import jakarta.persistence.*;
 public class Profile {
 
     @Id
+    @JsonBackReference
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //private Long internalID;
-    @Column(name = "ProfileID")
+    @Column(name = "ProfileID", nullable = false)
     private long profileID;
     @Column(name = "Username")
     public String username;
