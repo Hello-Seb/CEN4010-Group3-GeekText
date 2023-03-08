@@ -38,20 +38,7 @@ public class BooksController {
 
     @PostMapping("/books")
     public void postBooks(@RequestBody Books books) {
-        Books newBook = new Books();
-        newBook.setBookID(books.getBookID());
-        newBook.setBookName(books.getBookName());
-        newBook.setBookDescription(books.getBookDescription());
-        newBook.setBookAuthor(books.getBookAuthor());
-        newBook.setBookGenre(books.getBookGenre());
-        newBook.setBookSoldCopies(books.getBookSoldCopies());
-        newBook.setBookRatings(books.getBookRatings());
-        newBook.setBookPublisher(books.getBookPublisher());
-        newBook.setBookPrice(books.getBookPrice());
-        newBook.setBookISBN(books.getBookISBN());
-        newBook.setBookPublishYear(books.getBookPublishYear());
-        newBook.setBookComments(books.getBookComments());
-        booksRepository.save(newBook);
+        booksRepository.save(books);
     }
 
 

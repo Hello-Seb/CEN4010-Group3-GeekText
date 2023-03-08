@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="225208db-4165-430a-b715-819b3508657f" name="Changes" comment="Fixed Data Type issues">
+    <list default="true" id="225208db-4165-430a-b715-819b3508657f" name="Changes" comment="Fixed Data Type issues&#10;POST implementation to create a book with needed fields&#10;Fixed issue with porting data over into the DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/Books.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/BooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Group3/GeekText/BooksRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/Books.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/Books.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/BooksController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Group3/GeekText/BooksController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +34,6 @@
       <MavenGeneralSettings>
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2LhHcHq2DJqkWcXNUeNWHWvlC5B" />
@@ -112,6 +106,7 @@
       <workItem from="1677027520685" duration="1018000" />
       <workItem from="1678160736802" duration="3277000" />
       <workItem from="1678166360819" duration="7218000" />
+      <workItem from="1678252382496" duration="2947000" />
     </task>
     <servers />
   </component>
@@ -131,7 +126,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed Data Type issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Data Type issues" />
+    <MESSAGE value="Fixed Data Type issues&#10;POST implementation to create a book with needed fields&#10;Fixed issue with porting data over into the DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Data Type issues&#10;POST implementation to create a book with needed fields&#10;Fixed issue with porting data over into the DB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -140,6 +136,11 @@
           <properties class="java.lang.NumberFormatException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Group3/GeekText/BooksController.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
