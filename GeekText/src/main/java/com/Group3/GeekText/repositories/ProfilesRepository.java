@@ -13,5 +13,6 @@ public interface ProfilesRepository extends CrudRepository<Profile, Long> {
 
     List<Profile> findAll();
 
+    List<Profile> findByUsername(String Username);
 
 }

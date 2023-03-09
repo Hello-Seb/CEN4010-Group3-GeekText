@@ -59,6 +59,4 @@ public class Profile {
         this.homeAddress = homeAddress;
     }
 
-
-
 }
