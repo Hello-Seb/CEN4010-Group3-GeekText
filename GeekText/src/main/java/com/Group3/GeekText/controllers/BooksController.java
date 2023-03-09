@@ -1,16 +1,20 @@
-package com.Group3.GeekText.controllers;
+package com.Group3.GeekText;
 
-import com.Group3.GeekText.entities.Books;
+import org.jetbrains.annotations.NotNull;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
-import com.Group3.GeekText.repositories.BooksRepository;
-import com.Group3.GeekText.entities.Books;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/")
 public class BooksController {
-
 
     private final BooksRepository booksRepository;
 
@@ -18,15 +22,24 @@ public class BooksController {
         this.booksRepository = booksRepository;
     }
 
-
     @GetMapping("/getAllBooks")
     public List<Books> getAllBooks() {
         return booksRepository.findAll();
     }
 
-    @PostMapping(value = "/addBook")
-    public Books createBook(@RequestBody Books books){
-        return books;
+
+    @GetMapping("/helloWorld")
+    public String helloWorld(){
+        return "Hello World!";
     }
+
+    //GET BY ISBN
+    //GET BY AUTHOR
+
+    @PostMapping("/books")
+    public void postBooks(@RequestBody Books books) {
+        booksRepository.save(books);
+    }
+
 
 }
