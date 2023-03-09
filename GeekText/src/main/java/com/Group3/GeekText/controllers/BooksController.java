@@ -1,8 +1,10 @@
-package com.Group3.GeekText;
+package com.Group3.GeekText.controllers;
 
+import com.Group3.GeekText.entities.Books;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
+import com.Group3.GeekText.repositories.BooksRepository;
+import com.Group3.GeekText.entities.Books;
+
 import java.util.List;
 
 @RestController
