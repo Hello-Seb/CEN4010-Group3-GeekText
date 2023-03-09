@@ -1,9 +1,8 @@
 package com.Group3.GeekText;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import java.util.List;
 
 @RestController
@@ -17,15 +16,15 @@ public class BooksController {
         this.booksRepository = booksRepository;
     }
 
+
     @GetMapping("/getAllBooks")
     public List<Books> getAllBooks() {
         return booksRepository.findAll();
     }
-    @GetMapping("/helloWorld")
-    public String helloWorld(){
-        return "Hello World!";
+
+    @PostMapping(value = "/addBook")
+    public Books createBook(@RequestBody Books books){
+        return books;
     }
-
-
 
 }

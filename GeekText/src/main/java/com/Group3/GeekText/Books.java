@@ -9,8 +9,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Books")
-public class Books {
 
+public class Books {
     @Id
     @Column(name = "BookID")
     public String bookID;
@@ -30,7 +30,6 @@ public class Books {
     public String bookPublisher;
     @Column(name = "Price")
     public String bookPrice;
-
     @Column(name = "ISBN")
     public String bookISBN;
     @Column(name = "MadeYear")
@@ -38,6 +37,25 @@ public class Books {
 
     @Column(name = "Comments")
     public String bookComments;
+
+    //Create new Book Constructor
+    public Books(String bookID, String bookName, String bookDescription, String bookAuthor, String bookGenre, String bookSoldCopies, String bookRatings, String bookPublisher, String bookPrice, String bookISBN, String bookPublishYear, String bookComments) {
+        this.bookID = bookID;
+        this.bookName = bookName;
+        this.bookDescription = bookDescription;
+        this.bookAuthor = bookAuthor;
+        this.bookGenre = bookGenre;
+        this.bookSoldCopies = bookSoldCopies;
+        this.bookRatings = bookRatings;
+        this.bookPublisher = bookPublisher;
+        this.bookPrice = bookPrice;
+        this.bookISBN = bookISBN;
+        this.bookPublishYear = bookPublishYear;
+        this.bookComments = bookComments;
+    }
+    //Required by JPA to have an empty constructor
+    public Books() {
+    }
 
     public String getBookID() {
         return bookID;
@@ -133,6 +151,24 @@ public class Books {
 
     public void setBookComments(String bookComments) {
         this.bookComments = bookComments;
+    }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "bookID='" + bookID + '\'' +
+                ", bookName='" + bookName + '\'' +
+                ", bookDescription='" + bookDescription + '\'' +
+                ", bookAuthor='" + bookAuthor + '\'' +
+                ", bookGenre='" + bookGenre + '\'' +
+                ", bookSoldCopies='" + bookSoldCopies + '\'' +
+                ", bookRatings='" + bookRatings + '\'' +
+                ", bookPublisher='" + bookPublisher + '\'' +
+                ", bookPrice='" + bookPrice + '\'' +
+                ", bookISBN='" + bookISBN + '\'' +
+                ", bookPublishYear='" + bookPublishYear + '\'' +
+                ", bookComments='" + bookComments + '\'' +
+                '}';
     }
 }
 
