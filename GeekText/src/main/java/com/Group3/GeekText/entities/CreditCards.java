@@ -21,27 +21,5 @@ public class CreditCards {
     public int cvv;
 
 
-    /*
-    public String getCreditCardNumber() {
-        return creditCardNumber;
-    }
-    public void setCreditCardNumber(String creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
-    }
-    public int getCVV() {
-        return cvv;
-    }
-    public void setCVV(int cvv) {
-        this.cvv = cvv;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    */
 
 }

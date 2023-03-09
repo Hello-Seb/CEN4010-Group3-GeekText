@@ -56,6 +56,19 @@ public class ProfilesController {
         profilesRepository.save(newProfile);
     }
 
+    @PatchMapping("/profiles/{username}")
+    public ResponseEntity<Profile> updateProfile(@PathVariable String username, @RequestBody Profile profile) {
+
+        //Profile updatedProfile = profilesRepository.findByUsername(username);
+        {
+            profile.setProfileID(profile.getProfileID());
+            profile.setUsername(profile.getUsername());
+            profile.setName(profile.getName());
+            profile.setEmailAddress(profile.getEmailAddress());
+        }
+
+        return null;
+    }
 
 
 
