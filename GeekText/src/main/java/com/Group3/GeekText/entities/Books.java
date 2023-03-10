@@ -1,4 +1,4 @@
-package com.Group3.GeekText;
+package com.Group3.GeekText.entities;
 
 import org.springframework.data.repository.CrudRepository;
 import jakarta.persistence.*;

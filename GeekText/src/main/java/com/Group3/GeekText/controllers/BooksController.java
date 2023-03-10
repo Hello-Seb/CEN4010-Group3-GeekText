@@ -1,11 +1,14 @@
-package com.Group3.GeekText;
+package com.Group3.GeekText.controllers;
 
-import org.jetbrains.annotations.NotNull;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.*;
+import com.Group3.GeekText.entities.Profile;
+import com.Group3.GeekText.repositories.BooksRepository;
+import com.Group3.GeekText.entities.Books;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+import java.util.List;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -27,11 +30,6 @@ public class BooksController {
         return booksRepository.findAll();
     }
 
-
-    @GetMapping("/helloWorld")
-    public String helloWorld(){
-        return "Hello World!";
-    }
 
     //GET BY ISBN
     //GET BY AUTHOR
