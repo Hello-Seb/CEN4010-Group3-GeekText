@@ -36,7 +36,7 @@ public class BooksController {
 
 
     //GET BY ISBN
-    @GetMapping("/books/{ISBN}")
+    @GetMapping("/byIsbn/{ISBN}")
     public List<Books> getBookByIsbn(@PathVariable("ISBN") String ISBN){
         List<Books> isbnSearch = bookService.findBookByIsbn(ISBN);
         return isbnSearch;

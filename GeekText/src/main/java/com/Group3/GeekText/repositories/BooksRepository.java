@@ -10,9 +10,10 @@ import org.springframework.data.jpa.repository.Query;
 
 @Repository
 public interface BooksRepository extends CrudRepository<Books, Long> {
+
     List<Books> findAll();
 
-    @Query("SELECT a FROM Books a WHERE a.bookISBN =?1")
+    @Query(value = "SELECT * from Books a where a.ISBN = ?1", nativeQuery = true)
     List<Books> findBookByIsbn(String ISBN);
 
 }
