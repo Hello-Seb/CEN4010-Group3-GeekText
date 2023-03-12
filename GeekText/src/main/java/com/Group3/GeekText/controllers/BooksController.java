@@ -11,25 +11,15 @@ import com.Group3.GeekText.services.BooksService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
-public class BooksController {
+@RequestMapping("/")
 
+public class BooksController {
     @Autowired
     private BooksService booksService;
     /*@Autowired
     public BooksController(BooksService booksService) {
         this.booksService = booksService;
     }*/
-    @GetMapping
-    public List<Books> getBook(@RequestParam(required = false) String bookGenre) {
-        if (bookGenre == null){
-            return booksService.getBooks();
-        }
-        else{
-            List<Books> genreSearch = booksService.findByGenre(bookGenre);
-            return genreSearch;
-        }
-    }
 
     @GetMapping("/getAllBooks")
     public List<Books> getBooks() {
@@ -40,8 +30,8 @@ public class BooksController {
         return books;
     }
 
-    @GetMapping("/genre/{genre}")
-    public List<Books> getBooksByGenre(@PathVariable("genre") String bookGenre){
-        return booksService.getBooksByGenre(bookGenre);
+    @GetMapping("/genre/{bookGenre}")
+    public List<Books> getBooksByBookGenre(@PathVariable String bookGenre){
+        return booksService.getBooksByBookGenre(bookGenre);
     }
 }
