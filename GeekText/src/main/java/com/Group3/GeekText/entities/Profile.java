@@ -16,14 +16,14 @@ public class Profile {
     @Column(name = "ProfileID", nullable = false)
     private long profileID;
     @Column(name = "Username")
-    public String username;
+    private String username;
 
     @Column(name = "Name")
-    public String name;
+    private String name;
     @Column(name = "EmailAddress")
-    public String emailAddress;
+    private String emailAddress;
     @Column(name = "HomeAddress")
-    public String homeAddress;
+    private String homeAddress;
 
 
     public long getProfileID() {return profileID;}
