@@ -1,25 +1,17 @@
 package com.Group3.GeekText.controllers;
-
 import com.Group3.GeekText.repositories.ProfilesRepository;
+import com.Group3.GeekText.repositories.CreditCardRepository;
 import com.Group3.GeekText.entities.Profile;
-import com.Group3.GeekText.services.ProfileService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.Group3.GeekText.entities.CreditCard;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/")
 public class ProfilesController {
-
-    @Autowired
-    ProfileService profileService;
 
     private final ProfilesRepository profilesRepository;
 
@@ -32,13 +24,15 @@ public class ProfilesController {
         return profilesRepository.findAll();
     }
 
-   @GetMapping("/profiles/{id}")
-    public ResponseEntity<Profile> getById(@PathVariable long id) {
-       Optional<Profile> profile = profileService.getById(id);
+//    @GetMapping("/profiles/id/{id}")
+//    public ResponseEntity<Profile> getById(@PathVariable long id) {
+//       Optional<Profile> profile = profilesRepository.findById(id);
+//
+//           return new ResponseEntity<>(profile.get(), HttpStatus.OK);
+//       }
 
-           return new ResponseEntity<>(profile.get(), HttpStatus.OK);
-
-       }
+    @GetMapping("/profiles/username/{username}")
+    public List<Profile> getByUsername(@PathVariable String username) {return profilesRepository.findByUsername(username); }
 
     @GetMapping("/helloWorld")
     public String helloWorld(){
@@ -50,6 +44,7 @@ public class ProfilesController {
         Profile newProfile = new Profile();
         newProfile.setProfileID(profile.getProfileID());
         newProfile.setUsername(profile.getUsername());
+        newProfile.setPassword(profile.getPassword());
         newProfile.setName(profile.getName());
         newProfile.setEmailAddress(profile.getEmailAddress());
         newProfile.setHomeAddress(profile.getHomeAddress());
@@ -69,7 +64,6 @@ public class ProfilesController {
 
         return null;
     }
-
 
 
 

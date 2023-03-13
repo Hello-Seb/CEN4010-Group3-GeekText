@@ -1,9 +1,7 @@
 package com.Group3.GeekText.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
 
 @Entity
 @Table(name = "Profiles")
@@ -12,12 +10,17 @@ public class Profile {
     @Id
     @JsonBackReference
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //private Long internalID;
+
     @Column(name = "ProfileID", nullable = false)
     private long profileID;
+
+    @OneToOne(mappedBy = "cardholder")
+    private CreditCard creditCard;
+
     @Column(name = "Username")
     private String username;
-
+    @Column(name = "Password")
+    private String password;
     @Column(name = "Name")
     private String name;
     @Column(name = "EmailAddress")
@@ -36,6 +39,13 @@ public class Profile {
     }
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -58,5 +68,4 @@ public class Profile {
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
     }
-
 }
