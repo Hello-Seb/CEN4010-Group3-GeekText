@@ -1,1 +1,105 @@
+public class User {
+    private String username;
+    private String email;
+    private String password;
+    
+    
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+    
+    
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+    
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
+public class Authentication {
+    
+    public boolean authenticateUser(String username, String password) {
+        
+        User user = getUserFromDatabase(username);
+        
+        
+        if (user != null && user.getPassword().equals(password)) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    
+    private User getUserFromDatabase(String username) {
+        
+        return null;
+    }
+}
+public class Registration {
+    
+    public void registerUser(User user) {
+        
+        insertUserIntoDatabase(user);
+    }
+    
+    
+    private void insertUserIntoDatabase(User user) {
+        
+        
+    }
+}
+public class MyApp {
+    public static void main(String[] args) {
+        User user = new User("kendrick", "kendrick@example.com", "password");
+        
+        Authentication auth = new Authentication();
+        if (auth.authenticateUser(user.getUsername(), user.getPassword())) {
+            System.out.println("Authentication successful");
+        } else {
+            System.out.println("Authentication failed");
+        }
+        
+        Registration reg = new Registration();
+        reg.registerUser(user);
+    }
+}
 
+String username = "kendrick_belizaire";
+
+
+User user = getUserByUsername(username);
+
+
+if (user != null) {
+    
+    String usernameField = user.getUsername();
+    String emailField = user.getEmail();
+    String passwordField = user.getPassword();
+    
+    
+    System.out.println("Username: " + usernameField);
+    System.out.println("Email: " + emailField);
+    System.out.println("Password: " + passwordField);
+} else {
+    System.out.println("User not found");
+}
