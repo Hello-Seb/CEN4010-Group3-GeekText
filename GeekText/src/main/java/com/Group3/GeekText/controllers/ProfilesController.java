@@ -34,6 +34,17 @@ public class ProfilesController {
     @GetMapping("/profiles/username/{username}")
     public List<Profile> getByUsername(@PathVariable String username) {return profilesRepository.findByUsername(username); }
 
+    @GetMapping("/profiles/name/{username}")
+    public ResponseEntity<String> username(@PathVariable String username) {
+        String name = profilesRepository.findNameByUsername(username);
+        return new ResponseEntity<>(name, HttpStatus.OK);
+
+    }
+
+
+
+
+
     @GetMapping("/helloWorld")
     public String helloWorld(){
         return "Hello World!";
