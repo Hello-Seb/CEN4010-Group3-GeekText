@@ -40,12 +40,4 @@ public class CreditCardController {
         creditCardRepository.save(newCreditCard);
     }
 
-//    @GetMapping("/profiles/name/{username}")
-//    public ResponseEntity<String> username(@PathVariable String username) {
-//        String name = profilesRepository.findNameByUsername(username);
-//        return new ResponseEntity<>(name, HttpStatus.OK);
-//
-//    }
-
-
 }

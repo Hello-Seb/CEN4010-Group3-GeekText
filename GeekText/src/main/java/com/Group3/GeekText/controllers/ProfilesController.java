@@ -6,6 +6,8 @@ import com.Group3.GeekText.entities.CreditCard;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,13 +26,6 @@ public class ProfilesController {
         return profilesRepository.findAll();
     }
 
-//    @GetMapping("/profiles/id/{id}")
-//    public ResponseEntity<Profile> getById(@PathVariable long id) {
-//       Optional<Profile> profile = profilesRepository.findById(id);
-//
-//           return new ResponseEntity<>(profile.get(), HttpStatus.OK);
-//       }
-
     @GetMapping("/profiles/username/{username}")
     public List<Profile> getByUsername(@PathVariable String username) {return profilesRepository.findByUsername(username); }
 
@@ -39,15 +34,6 @@ public class ProfilesController {
         String name = profilesRepository.findNameByUsername(username);
         return new ResponseEntity<>(name, HttpStatus.OK);
 
-    }
-
-
-
-
-
-    @GetMapping("/helloWorld")
-    public String helloWorld(){
-        return "Hello World!";
     }
 
     @PostMapping("/profiles")
@@ -62,18 +48,18 @@ public class ProfilesController {
         profilesRepository.save(newProfile);
     }
 
-    @PatchMapping("/profiles/{username}")
-    public ResponseEntity<Profile> updateProfile(@PathVariable String username, @RequestBody Profile profile) {
+    @PutMapping("/profiles/update/{username}")
+    public void updateProfile(@PathVariable String username, @RequestBody Profile updatedProfile) {
 
-        //Profile updatedProfile = profilesRepository.findByUsername(username);
-        {
-            profile.setProfileID(profile.getProfileID());
-            profile.setUsername(profile.getUsername());
-            profile.setName(profile.getName());
-            profile.setEmailAddress(profile.getEmailAddress());
-        }
+        Profile currentProfile = profilesRepository.findProfileByUsername(username);
 
-        return null;
+        currentProfile.setUsername(updatedProfile.getUsername());
+        currentProfile.setPassword(updatedProfile.getPassword());
+        currentProfile.setName(updatedProfile.getName());
+        currentProfile.setEmailAddress(updatedProfile.getEmailAddress());
+
+        profilesRepository.save(currentProfile);
+
     }
 
 
