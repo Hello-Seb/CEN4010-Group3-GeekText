@@ -33,11 +33,14 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable("id") long id){
-        return new ResponseEntity<Product>(productService.getProductById(id), HttpStatus.OK);
+    @GetMapping("{user-id}")
+    public ResponseEntity<Product> getProductById(@PathVariable("user-id") long UserId){
+        return new ResponseEntity<Product>(productService.getProductById(UserId), HttpStatus.OK);
     }
-
+    @GetMapping("{user-id}/subtotal")
+    public int getSubtotalPriceByUserId(@PathVariable("user-id") long UserId){
+        return productService.getSubtotalPriceByUserId(UserId);
+    }
 
 
 
