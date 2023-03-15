@@ -17,6 +17,9 @@ public interface ProfilesRepository extends CrudRepository<Profile, Long> {
 
     @Query("SELECT x.name FROM Profile x WHERE x.username = :username")
     String findNameByUsername(@Param("username") String username);
+
+    @Query("SELECT x.homeAddress FROM Profile x WHERE x.username = :username")
+    String findAddressByUsername(@Param("username") String username);
 }
 
 

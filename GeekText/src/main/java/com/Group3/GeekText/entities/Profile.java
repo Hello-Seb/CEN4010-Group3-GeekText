@@ -14,8 +14,6 @@ public class Profile {
     @Column(name = "ProfileID", nullable = false)
     private long profileID;
 
-    @OneToOne(mappedBy = "cardholder")
-    private CreditCard creditCard;
 
     @Column(name = "Username")
     private String username;

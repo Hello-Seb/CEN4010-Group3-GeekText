@@ -4,6 +4,8 @@ import com.Group3.GeekText.entities.Profile;
 import com.Group3.GeekText.repositories.CreditCardRepository;
 import com.Group3.GeekText.entities.CreditCard;
 import com.Group3.GeekText.repositories.ProfilesRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,14 +29,23 @@ public class CreditCardController {
     }
 
     @PostMapping("/creditcards/{username}")
-    public void postCreditCard(@RequestBody CreditCard creditCard, @RequestBody Profile username) {
+    public void postCreditCard(@RequestBody CreditCard creditCard, @PathVariable String username) {
         CreditCard newCreditCard = new CreditCard();
         newCreditCard.setCreditCardID(creditCard.getCreditCardID());
-        //newCreditCard.setCardholder(name.getName());
+        newCreditCard.setCardholder(profilesRepository.findNameByUsername(username));
+        newCreditCard.setBillingAddress(profilesRepository.findAddressByUsername(username));
         newCreditCard.setCvv(creditCard.getCvv());
         newCreditCard.setExpirationDate(creditCard.getExpirationDate());
-
+        newCreditCard.setCreditCardNumber(creditCard.getCreditCardNumber());
+        creditCardRepository.save(newCreditCard);
     }
+
+//    @GetMapping("/profiles/name/{username}")
+//    public ResponseEntity<String> username(@PathVariable String username) {
+//        String name = profilesRepository.findNameByUsername(username);
+//        return new ResponseEntity<>(name, HttpStatus.OK);
+//
+//    }
 
 
 }

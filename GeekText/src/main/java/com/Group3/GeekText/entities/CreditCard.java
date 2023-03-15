@@ -17,16 +17,9 @@ public class CreditCard {
     @Column(name = "CreditCardID", nullable = false)
     private long creditCardID;
 
-    @OneToOne
-    @JoinColumn(name = "Cardholder", referencedColumnName = "Username")
-    private Profile cardholder;
 
-//    @OneToOne
-//    @JoinColumn(name = "Cardholder", referencedColumnName = "Username")
-//    private Profile profile;
-//
-//    @Column(name = "Cardholder")
-//    private String cardholder;
+    @Column(name = "Cardholder")
+    private String cardholder;
     @Column(name = "CVV")
     private int cvv;
     @Column(name = "CreditCardNumber")
@@ -39,8 +32,8 @@ public class CreditCard {
     public long getCreditCardID() {return creditCardID;}
     public void setCreditCardID(long creditCardID) {this.creditCardID = creditCardID;}
 
-//    public String getCardholder() {return cardholder;}
-//    public void setCardholder(String cardholder) {this.cardholder = cardholder;}
+    public String getCardholder() {return cardholder;}
+    public void setCardholder(String cardholder) {this.cardholder = cardholder;}
 
     public int getCvv() {return cvv;}
     public void setCvv(int cvv) {this.cvv = cvv;}
