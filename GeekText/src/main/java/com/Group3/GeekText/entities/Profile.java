@@ -13,7 +13,7 @@ public class Profile {
 
     @Column(name = "ProfileID", nullable = false)
     private long profileID;
-    
+
     @Column(name = "Username")
     private String username;
     @Column(name = "Password")

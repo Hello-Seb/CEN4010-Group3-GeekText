@@ -53,10 +53,18 @@ public class ProfilesController {
 
         Profile currentProfile = profilesRepository.findProfileByUsername(username);
 
-        currentProfile.setUsername(updatedProfile.getUsername());
-        currentProfile.setPassword(updatedProfile.getPassword());
-        currentProfile.setName(updatedProfile.getName());
-        currentProfile.setEmailAddress(updatedProfile.getEmailAddress());
+        if (updatedProfile.getUsername() != null) {
+            currentProfile.setUsername(updatedProfile.getUsername());
+        }
+        if (updatedProfile.getPassword() != null) {
+            currentProfile.setPassword(updatedProfile.getPassword());
+        }
+        if (updatedProfile.getName() != null) {
+            currentProfile.setName(updatedProfile.getName());
+        }
+        if (updatedProfile.getEmailAddress() != null) {
+            currentProfile.setEmailAddress(updatedProfile.getEmailAddress());
+        }
 
         profilesRepository.save(currentProfile);
 
