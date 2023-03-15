@@ -1,10 +1,7 @@
 package com.Group3.GeekText.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
-
-@Data
 @Entity
 @Table(name = "ShoppingCart")
 public class Product {
