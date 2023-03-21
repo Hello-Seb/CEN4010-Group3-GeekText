@@ -1,28 +1,31 @@
 package com.Group3.GeekText.services.Impl;
 
+
+import com.Group3.GeekText.entities.Books;
 import com.Group3.GeekText.entities.Product;
-import com.Group3.GeekText.exeption.ResourceNotFoundException;
+import com.Group3.GeekText.repositories.BooksRepository;
 import com.Group3.GeekText.repositories.ProductRepository;
+import com.Group3.GeekText.repositories.ProfilesRepository;
 import com.Group3.GeekText.services.ProductService;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
-    public ProductServiceImpl(ProductRepository productRepository){
-        super();
+    private final BooksRepository booksRepository;
+
+    private final ProfilesRepository profilesRepository;
+
+    public ProductServiceImpl(ProductRepository productRepository, BooksRepository booksRepository, ProfilesRepository profilesRepository){
         this.productRepository = productRepository;
-    }
-
-    @Override
-    public Product saveProduct(Product product) {
-        return productRepository.save(product);
+        this.booksRepository = booksRepository;
+        this.profilesRepository = profilesRepository;
     }
 
     @Override
@@ -31,24 +34,41 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductById(long UserId) {
-        Optional<Product> product = productRepository.findById(UserId);
-        if(product.isPresent()){
-            return product.get();
-        }else{
-            throw new ResourceNotFoundException("Product", "UserId", UserId);
+    public List<Books> getProductsByUserId(long userId) {
+        List<String> bookIds = productRepository.findAllByUserId(userId).stream().map(x-> String.valueOf(x.getBookId())).toList();
+        return booksRepository.findAllById(bookIds);
+    }
+
+    @Override
+    public void addItemToCart(Long userId, int bookId) throws Exception {
+        profilesRepository.findById(userId).orElseThrow(() -> new Exception("User not found"));
+        booksRepository.findById(String.valueOf(bookId)).orElseThrow(() -> new Exception("Book not found"));
+
+        Product product = productRepository.findByUserIdAndBookId(userId, bookId);
+        if (product != null) {
+            product.setQuantity(product.getQuantity() + 1);
+        } else {
+            product = Product.builder()
+                    .userId(userId)
+                    .quantity(1)
+                    .bookId(bookId)
+                    .build();
         }
+        productRepository.save(product);
+
     }
 
 
-
-
     @Override
-    public int getSubtotalPriceByUserId(long UserId) {
-         List<Product> products = productRepository.findAllById(Collections.singleton(UserId));
-         int subtotal = 0;
-         for (Product item :products ){
-             subtotal += item.getPrice() * item.getAvailableQuantity();
+    public double getSubtotalPrice(long userId) {
+         List<Product> products = productRepository.findAllByUserId(userId);
+
+        Map<String, Double> bookPrices = booksRepository.findAll().stream()
+                .collect(Collectors.toMap(Books::getBookID, Books::getBookPrice));
+
+         double subtotal = 0;
+         for (Product product : products ){
+             subtotal += (product.getQuantity() * bookPrices.getOrDefault(String.valueOf(product.getBookId()), 0.00));
          }
          return subtotal;
     }

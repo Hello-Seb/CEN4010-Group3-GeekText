@@ -1,26 +1,34 @@
 package com.Group3.GeekText.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.awt.print.Book;
 
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "ShoppingCart")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long UserId;
+    private long id;
 
-    @Column(name = "NameOfProduct")
-    private String nameOfProduct;
+    @Column(name = "UserId")
+    private Long userId;
 
-    @Column(name = "AvailableQuantity")
-    private int availableQuantity;
+    @Column(name = "Quantity")
+    private int quantity;
 
-    @Column(name="Price")
-    private float price;
+    @Column(name="BookId")
+    private int bookId;
 
 
 }
