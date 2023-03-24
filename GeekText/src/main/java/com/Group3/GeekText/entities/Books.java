@@ -1,9 +1,7 @@
 package com.Group3.GeekText.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.repository.CrudRepository;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -11,6 +9,8 @@ import jakarta.persistence.Table;
 
 public class Books {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "BookID")
     public String bookID;
     @Column(name = "BookName")

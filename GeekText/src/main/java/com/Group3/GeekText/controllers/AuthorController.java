@@ -28,7 +28,8 @@ public class AuthorController {
     }
 
     @PostMapping("/addAuthor")
-    public void postAuthor(@RequestBody Author author) {
+    public void createAuthor(@RequestBody Author author) {
         authorRepository.save(author);
     }
+
 }

@@ -36,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Books> getProductsByUserId(long userId) {
         List<String> bookIds = productRepository.findAllByUserId(userId).stream().map(x-> String.valueOf(x.getBookId())).toList();
-        return booksRepository.findAllById(bookIds);
+        return (List<Books>) booksRepository.findAllById(bookIds);
     }
 
     @Override
