@@ -10,7 +10,9 @@ import java.util.List;
 @Service
 public interface BooksService {
 
+
     List<Books> findAll();
     List<Books> getBooksByBookGenre(String bookGenre);
+    List<Books> findBookByIsbn(String ISBN);
 
 }

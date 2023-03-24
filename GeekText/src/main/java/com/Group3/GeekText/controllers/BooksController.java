@@ -16,18 +16,26 @@ import java.util.List;
 public class BooksController {
     @Autowired
     private BooksService booksService;
-    /*@Autowired
+
+    @Autowired
     public BooksController(BooksService booksService) {
         this.booksService = booksService;
-    }*/
+    }
 
     @GetMapping("/getAllBooks")
     public List<Books> getBooks() {
         return booksService.findAll();
     }
+
     @PostMapping(value = "/addBook")
     public Books createBook(@RequestBody Books books){
         return books;
+    }
+
+    @GetMapping("/byIsbn/{ISBN}")
+    public List<Books> getBookByIsbn(@PathVariable("ISBN") String ISBN){
+        List<Books> isbnSearch = booksService.findBookByIsbn(ISBN);
+        return isbnSearch;
     }
 
     @GetMapping("/genre/{bookGenre}")
