@@ -37,8 +37,14 @@ public class BooksController {
         return booksService.getBooksByBookGenre(bookGenre);
     }
 
+    @GetMapping("/rating/{bookRatings}")
+    public List<Books> getBooksByBookRatings(@PathVariable String bookRatings){
+        return booksService.getBooksByBookRatings(bookRatings);
+    }
+
     @PostMapping("/books")
     public void createBook(@RequestBody Books books) {
         booksRepository.save(books);
     }
+
 }
