@@ -45,8 +45,6 @@ public class BooksController {
         return booksService.getBooksByBookGenre(bookGenre);
     }
 
-
-
     @PostMapping("/books")
     public void createBook(@RequestBody Books books) {
         booksRepository.save(books);
