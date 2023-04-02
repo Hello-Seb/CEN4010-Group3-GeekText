@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface RatingsRepository extends JpaRepository<Ratings,Long> {
     List<Ratings> findByUserID(Long userID);
-    List<Ratings> findByBookId(Long bookId);
+    List<Ratings> findByBookID(Long bookId);
     List<Ratings> findByRatingGreaterThanEqual(int rating);
     List<Ratings> findByRatingLessThan(int rating);
 

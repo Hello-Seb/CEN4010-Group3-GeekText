@@ -1,3 +1,7 @@
+// Created by Sebastian Barnes
+// Panther ID 6276085
+// **PURPOSE** This class defines the "Profile" entity, which is connected to the Profiles table in our SQL database
+
 package com.Group3.GeekText.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -8,7 +12,7 @@ import jakarta.persistence.*;
 @Table(name = "Profiles")
 public class Profile {
 
-    //Setting Id generation type so that SQL database is able to generate unique IDs upon creation of entity
+    //Setting ID generation type so that SQL database is able to generate unique IDs upon creation of entity
     @Id
     @JsonBackReference
     @GeneratedValue(strategy = GenerationType.IDENTITY)
