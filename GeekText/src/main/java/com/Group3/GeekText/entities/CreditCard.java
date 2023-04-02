@@ -1,11 +1,7 @@
 package com.Group3.GeekText.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
-import java.util.Date;
-
 
 @Entity
 @Table(name = "CreditCards")
@@ -16,7 +12,6 @@ public class CreditCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CreditCardID", nullable = false)
     private long creditCardID;
-
 
     @Column(name = "Cardholder")
     private String cardholder;
