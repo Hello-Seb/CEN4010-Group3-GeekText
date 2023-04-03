@@ -20,7 +20,7 @@ public class ProductController {
     }
 
 
-    @GetMapping("/get-all-products")
+    @GetMapping("get-all-products")
     public List<Product> getAllProducts() {
 
         return productService.getAllProducts();
@@ -46,6 +46,15 @@ public class ProductController {
             productService.addItemToCart(userId, bookId);
             return ResponseEntity.ok().build();
         } catch(Exception e) {
+            return ResponseEntity.status(500).body(String.format("Error occurred: %s", e.getMessage()));
+        }
+    }
+@DeleteMapping("delete-product/{userId}/{bookId}")
+    public  ResponseEntity<String> removeBookFromCart(@PathVariable("userId") long userId, @PathVariable("bookId") int bookId){
+        try {
+            productService.deleteBookFromCart(userId, bookId);
+            return ResponseEntity.ok().build();
+        }catch (Exception e){
             return ResponseEntity.status(500).body(String.format("Error occurred: %s", e.getMessage()));
         }
     }

@@ -144,10 +144,6 @@ public class Books {
         this.bookPublishYear = bookPublishYear;
     }
 
-    public String getBookComments() {
-        return bookComments;
-    }
-
     public void setBookComments(String bookComments) {
         this.bookComments = bookComments;
     }
