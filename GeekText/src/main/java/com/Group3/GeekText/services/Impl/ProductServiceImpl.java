@@ -73,4 +73,22 @@ public class ProductServiceImpl implements ProductService {
          return subtotal;
     }
 
+    @Override
+    public void deleteBookFromCart(Long userId, int bookId) throws Exception {
+        profilesRepository.findById(userId).orElseThrow(() -> new Exception("User not found"));
+        booksRepository.findById(String.valueOf(bookId)).orElseThrow(() -> new Exception("Book not found"));
+
+        Product product = productRepository.findByUserIdAndBookId(userId, bookId);
+        if(product.getQuantity() > 1) {
+            product.setQuantity(product.getQuantity() - 1);
+            productRepository.save(product);
+        }else{
+            productRepository.delete(product);
+        }
+
+
+
+
+    }
+
 }

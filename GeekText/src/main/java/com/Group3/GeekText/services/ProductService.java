@@ -22,4 +22,7 @@ public interface ProductService {
 
     //Retrieve the subtotal price of all items in the user's shoppingCart given a userId
     double getSubtotalPrice(long userId);
+
+//    Delete a book from the shopping cart given a userId and a bookId
+    void deleteBookFromCart(Long userId, int bookId) throws Exception;
 }
