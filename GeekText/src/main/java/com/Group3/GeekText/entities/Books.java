@@ -1,9 +1,7 @@
 package com.Group3.GeekText.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.repository.CrudRepository;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -11,6 +9,8 @@ import jakarta.persistence.Table;
 
 public class Books {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "BookID")
     public String bookID;
     @Column(name = "BookName")
@@ -22,13 +22,13 @@ public class Books {
     @Column(name = "Genre")
     public String bookGenre;
     @Column(name = "CopiesSold")
-    public String bookSoldCopies;
+    public double bookSoldCopies;
     @Column(name = "Rating")
     public String bookRatings;
     @Column(name = "Publisher")
     public String bookPublisher;
     @Column(name = "Price")
-    public String bookPrice;
+    public double bookPrice;
     @Column(name = "ISBN")
     public String bookISBN;
     @Column(name = "MadeYear")
@@ -38,7 +38,7 @@ public class Books {
     public String bookComments;
 
     //Create new Book Constructor
-    public Books(String bookID, String bookName, String bookDescription, String bookAuthor, String bookGenre, String bookSoldCopies, String bookRatings, String bookPublisher, String bookPrice, String bookISBN, String bookPublishYear, String bookComments) {
+    public Books(String bookID, String bookName, String bookDescription, String bookAuthor, String bookGenre, double bookSoldCopies, String bookRatings, String bookPublisher, double bookPrice, String bookISBN, String bookPublishYear, String bookComments) {
         this.bookID = bookID;
         this.bookName = bookName;
         this.bookDescription = bookDescription;
@@ -96,19 +96,19 @@ public class Books {
         this.bookGenre = bookGenre;
     }
 
-    public String getBookSoldCopies() {
+    public double getBookSoldCopies() {
         return bookSoldCopies;
     }
 
-    public void setBookSoldCopies(String bookSoldCopies) {
+    public void setBookSoldCopies(double bookSoldCopies) {
         this.bookSoldCopies = bookSoldCopies;
     }
 
-    public String getBookRatings() {
+    public String  getBookRatings() {
         return bookRatings;
     }
 
-    public void setBookRatings(String bookRatings) {
+    public void setBookRatings(String  bookRatings) {
         this.bookRatings = bookRatings;
     }
 
@@ -120,11 +120,11 @@ public class Books {
         this.bookPublisher = bookPublisher;
     }
 
-    public String getBookPrice() {
+    public double getBookPrice() {
         return bookPrice;
     }
 
-    public void setBookPrice(String bookPrice) {
+    public void setBookPrice(double bookPrice) {
         this.bookPrice = bookPrice;
     }
 
@@ -142,10 +142,6 @@ public class Books {
 
     public void setBookPublishYear(String bookPublishYear) {
         this.bookPublishYear = bookPublishYear;
-    }
-
-    public String getBookComments() {
-        return bookComments;
     }
 
     public void setBookComments(String bookComments) {
