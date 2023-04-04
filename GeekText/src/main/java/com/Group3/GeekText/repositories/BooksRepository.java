@@ -1,11 +1,10 @@
 package com.Group3.GeekText.repositories;
 
 import com.Group3.GeekText.entities.Books;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import java.util.*;
 import org.springframework.data.jpa.repository.Query;
 
 
@@ -25,4 +24,7 @@ public interface BooksRepository extends CrudRepository<Books, String>{
 
     @Query(value = "SELECT b from Books b where b.bookID = :bookID", nativeQuery = true)
     List<Books> findBooksByBookID(@Param("bookID") String bookID);
+
+    @Query(value = "SELECT b FROM Books b ORDER BY b.bookSoldCopies DESC")
+    List<Books> findTop10SoldBooks(Pageable pageable);
 }
