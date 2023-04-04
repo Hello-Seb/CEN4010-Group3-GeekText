@@ -44,6 +44,15 @@ public class BooksController {
     public List<Books> getBooksByBookRatings(@PathVariable String bookRatings){
         return booksService.getBooksByBookRatings(bookRatings);
     }
+    @GetMapping("/books/{bookAuthor}")
+    public List<Books> getBooksByBookAuthor(@PathVariable String bookAuthor){
+        return booksService.getBooksByBookAuthor(bookAuthor);
+    }
+
+    @PostMapping("/books")
+    public void createBook(@RequestBody Books books) {
+        booksRepository.save(books);
+    }
 
     @GetMapping("/top10")
     public List<Books> getTop10SoldBooks(){
@@ -51,10 +60,6 @@ public class BooksController {
         return booksRepository.findTop10SoldBooks(pageable);
     }
 
-    @PostMapping("/books")
-    public void createBook(@RequestBody Books books) {
-        booksRepository.save(books);
-    }
 
 
 
