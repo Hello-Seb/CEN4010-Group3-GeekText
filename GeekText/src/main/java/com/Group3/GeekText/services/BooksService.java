@@ -13,6 +13,7 @@ public interface BooksService {
 
     List<Books> findAll();
     List<Books> getBooksByBookGenre(String bookGenre);
+    List<Books> getBooksByBookAuthor(String bookAuthor);
     List<Books> findBookByIsbn(String ISBN);
 
 

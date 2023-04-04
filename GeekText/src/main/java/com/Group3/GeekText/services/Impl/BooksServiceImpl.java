@@ -28,4 +28,9 @@ public class  BooksServiceImpl implements BooksService {
         return booksRepository.findBookByIsbn(ISBN);
     }
 
+    @Override
+    public List<Books> getBooksByBookAuthor(String bookAuthor) {
+        return booksRepository.findByBookAuthor(bookAuthor);
+    }
+
 }
