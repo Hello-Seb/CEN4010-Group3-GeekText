@@ -6,6 +6,7 @@ import com.Group3.GeekText.services.BooksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -22,15 +23,13 @@ public class  BooksServiceImpl implements BooksService {
     public List<Books> findAll() {
         return booksRepository.findAll();
     }
+    @Override
+    public List<Books> getBooksByBookRatings(String bookRatings){return booksRepository.findByBookRatingsGreaterThanEqual(bookRatings);}
 
     @Override
-    public List<Books> findBookByIsbn(String ISBN){
+    public List<Books> findBookByIsbn(String ISBN) {
         return booksRepository.findBookByIsbn(ISBN);
     }
 
-    @Override
-    public List<Books> getBooksByBookAuthor(String bookAuthor) {
-        return booksRepository.findByBookAuthor(bookAuthor);
-    }
 
 }

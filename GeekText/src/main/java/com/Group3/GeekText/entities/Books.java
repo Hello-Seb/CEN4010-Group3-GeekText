@@ -22,7 +22,7 @@ public class Books {
     @Column(name = "Genre")
     public String bookGenre;
     @Column(name = "CopiesSold")
-    public String bookSoldCopies;
+    public double bookSoldCopies;
     @Column(name = "Rating")
     public String bookRatings;
     @Column(name = "Publisher")
@@ -38,7 +38,7 @@ public class Books {
     public String bookComments;
 
     //Create new Book Constructor
-    public Books(String bookID, String bookName, String bookDescription, String bookAuthor, String bookGenre, String bookSoldCopies, String bookRatings, String bookPublisher, double bookPrice, String bookISBN, String bookPublishYear, String bookComments) {
+    public Books(String bookID, String bookName, String bookDescription, String bookAuthor, String bookGenre, double bookSoldCopies, String bookRatings, String bookPublisher, double bookPrice, String bookISBN, String bookPublishYear, String bookComments) {
         this.bookID = bookID;
         this.bookName = bookName;
         this.bookDescription = bookDescription;
@@ -96,19 +96,19 @@ public class Books {
         this.bookGenre = bookGenre;
     }
 
-    public String getBookSoldCopies() {
+    public double getBookSoldCopies() {
         return bookSoldCopies;
     }
 
-    public void setBookSoldCopies(String bookSoldCopies) {
+    public void setBookSoldCopies(double bookSoldCopies) {
         this.bookSoldCopies = bookSoldCopies;
     }
 
-    public String getBookRatings() {
+    public String  getBookRatings() {
         return bookRatings;
     }
 
-    public void setBookRatings(String bookRatings) {
+    public void setBookRatings(String  bookRatings) {
         this.bookRatings = bookRatings;
     }
 
@@ -142,10 +142,6 @@ public class Books {
 
     public void setBookPublishYear(String bookPublishYear) {
         this.bookPublishYear = bookPublishYear;
-    }
-
-    public String getBookComments() {
-        return bookComments;
     }
 
     public void setBookComments(String bookComments) {
