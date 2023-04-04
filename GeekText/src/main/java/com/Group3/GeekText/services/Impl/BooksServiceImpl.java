@@ -24,12 +24,18 @@ public class  BooksServiceImpl implements BooksService {
         return booksRepository.findAll();
     }
     @Override
-    public List<Books> getBooksByBookRatings(String bookRatings){return booksRepository.findByBookRatingsGreaterThanEqual(bookRatings);}
+    public List<Books> getBooksByBookRatings(String bookRatings){
+        return booksRepository.findByBookRatingsGreaterThanEqual(bookRatings);
+    }
 
     @Override
     public List<Books> findBookByIsbn(String ISBN) {
         return booksRepository.findBookByIsbn(ISBN);
     }
 
+    @Override
+    public List<Books> getBooksByBookAuthor(String bookAuthor) {
+        return booksRepository.findByBookAuthor(bookAuthor);
+    }
 
 }

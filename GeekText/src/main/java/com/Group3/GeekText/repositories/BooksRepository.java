@@ -18,6 +18,8 @@ public interface BooksRepository extends CrudRepository<Books, String>{
 
     List<Books> findByBookRatingsGreaterThanEqual(String bookRatings);
 
+    List<Books> findByBookAuthor(String bookAuthor);
+
     @Query(value = "SELECT * from Books a where a.ISBN = ?1", nativeQuery = true)
     List<Books> findBookByIsbn(String ISBN);
 
