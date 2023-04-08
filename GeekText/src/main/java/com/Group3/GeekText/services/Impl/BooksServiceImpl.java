@@ -27,7 +27,6 @@ public class  BooksServiceImpl implements BooksService {
     public List<Books> getBooksByBookRatings(String bookRatings){
         return booksRepository.findByBookRatingsGreaterThanEqual(bookRatings);
     }
-
     @Override
     public List<Books> findBookByIsbn(String ISBN) {
         return booksRepository.findBookByIsbn(ISBN);
@@ -37,5 +36,22 @@ public class  BooksServiceImpl implements BooksService {
     public List<Books> getBooksByBookAuthor(String bookAuthor) {
         return booksRepository.findByBookAuthor(bookAuthor);
     }
+
+    @Override
+    public List<Books> updateBookPriceByBookPublisher(String bookPublisher, double discountPercent) {
+        List<Books> books = booksRepository.findByBookPublisher(bookPublisher);
+        for (Books book : books) {
+            double currentBookPrice = book.getBookPrice();
+            double discount = currentBookPrice * discountPercent / 100;
+            double updatedBookPrice = currentBookPrice - discount;
+            book.setBookPrice(updatedBookPrice);
+        }
+
+        booksRepository.saveAll(books);
+        return books;
+    }
+
+
+
 
 }

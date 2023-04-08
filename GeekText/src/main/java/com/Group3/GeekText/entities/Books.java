@@ -38,7 +38,8 @@ public class Books {
     public String bookComments;
 
     //Create new Book Constructor
-    public Books(String bookID, String bookName, String bookDescription, String bookAuthor, String bookGenre, double bookSoldCopies, String bookRatings, String bookPublisher, double bookPrice, String bookISBN, String bookPublishYear, String bookComments) {
+    public Books(String bookID, String bookName, String bookDescription, String bookAuthor, String bookGenre, double bookSoldCopies,
+                 String bookRatings, String bookPublisher, double bookPrice, String bookISBN, String bookPublishYear, String bookComments) {
         this.bookID = bookID;
         this.bookName = bookName;
         this.bookDescription = bookDescription;
@@ -165,5 +166,7 @@ public class Books {
                 ", bookComments='" + bookComments + '\'' +
                 '}';
     }
+
+
 }
 
