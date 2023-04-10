@@ -27,4 +27,6 @@ public interface BooksRepository extends CrudRepository<Books, String>{
 
     @Query(value = "SELECT b FROM Books b ORDER BY b.bookSoldCopies DESC")
     List<Books> findTop10SoldBooks(Pageable pageable);
+
+    List<Books> findByBookPublisher(String bookPublisher);
 }
