@@ -15,15 +15,6 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1")
 public class RatingController {
-
-
-    /*
-    @PostMapping(value = "/createRating", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Ratings createRating(@RequestParam int rating, @RequestParam Long userID, @RequestParam Long bookID){
-        return ratingService.createRating(rating, userID, bookID);
-    }
-     */
-
     @Autowired
     private RatingsRepository ratingsRepository;
 
