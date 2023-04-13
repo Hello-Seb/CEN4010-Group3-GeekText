@@ -58,7 +58,7 @@ public class RatingController {
         }
     }
      */
-    @GetMapping("/books/{bookID}/averageRating")
+    @GetMapping("/{bookID}/averageRating")
     public ResponseEntity<Double> getAverageRating(@PathVariable Integer bookID){
         try{
             // This will retrieve all ratings for the given book

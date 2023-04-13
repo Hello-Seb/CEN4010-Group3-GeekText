@@ -5,12 +5,10 @@ import com.Group3.GeekText.repositories.CommentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -35,5 +33,29 @@ public class CommentsController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
+    /*
+    @GetMapping("/comments/{bookID}")
+    public ResponseEntity<List<Comments>> getCommentsByBookID(@RequestParam Integer bookID) {
+        try {
+            List<Comments> comments = commentsRepository.findByBookID(bookID);
+            return ResponseEntity.ok(comments);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+     */
+
+    @GetMapping("/comments/{bookID}")
+    public ResponseEntity<List<Comments>> getCommentsByBookID(@PathVariable Integer bookID) {
+        try {
+            List<Comments> comments = commentsRepository.findByBookID(bookID);
+            return ResponseEntity.ok(comments);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+
 
 }
