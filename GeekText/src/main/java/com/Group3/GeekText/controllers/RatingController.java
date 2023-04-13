@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -36,4 +37,46 @@ public class RatingController {
         }
     }
 
+    // GET method for computing the average rating of a book in decimal format
+
+    /*
+    @GetMapping("/books/{bookID}/averageRating")
+    public ResponseEntity<Double> getAverageRating(@PathVariable Integer bookID){
+        try{
+            // This will retrieve all ratings for the given book
+            List<Ratings> ratings = ratingsRepository.findByBookID(bookID);
+
+            double sum = 0;
+            for(Ratings rating : ratings){
+                sum += rating.getRating();
+            }
+            double averageRating = sum / ratings.size();
+
+            return ResponseEntity.ok(averageRating);
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+     */
+    @GetMapping("/books/{bookID}/averageRating")
+    public ResponseEntity<Double> getAverageRating(@PathVariable Integer bookID){
+        try{
+            // This will retrieve all ratings for the given book
+            List<Ratings> ratings = ratingsRepository.findByBookID(bookID);
+
+            double sum = 0;
+            for(Ratings rating : ratings){
+                sum += rating.getRating();
+            }
+
+            double averageRating = 0.0;
+            if (!ratings.isEmpty()) {
+                averageRating = sum / ratings.size();
+            }
+
+            return ResponseEntity.ok(averageRating);
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 }
