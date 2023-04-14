@@ -1,7 +1,12 @@
 package com.Group3.GeekText.controllers;
 
 import com.Group3.GeekText.entities.Books;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.Group3.GeekText.repositories.BooksRepository;
 import com.Group3.GeekText.services.BooksService;
@@ -60,5 +65,21 @@ public class BooksController {
         Pageable pageable = PageRequest.of(0, 10);
         return booksRepository.findTop10SoldBooks(pageable);
     }
+
+    @PutMapping("/updatePrice/{bookPublisher}")
+    public ResponseEntity<String> updateBookPriceByBookPublisher(@PathVariable String bookPublisher, @RequestParam double discountPercent) {
+        try {
+            List<Books> updatedBooks = booksService.updateBookPriceByBookPublisher(bookPublisher, discountPercent);
+            ObjectMapper objectMapper = new ObjectMapper();
+            String json = objectMapper.writeValueAsString(updatedBooks);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            return new ResponseEntity<>(json, headers, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update book prices: " + e.getMessage());
+        }
+    }
+
 
 }

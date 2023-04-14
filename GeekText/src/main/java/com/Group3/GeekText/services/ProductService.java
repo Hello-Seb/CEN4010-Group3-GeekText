@@ -12,10 +12,8 @@ public interface ProductService {
     //to get All Product
     List<Product> getAllProducts();
 
-
     //get product by userId
     List<Books> getProductsByUserId(long userId);
-
 
     //add product to the shopping cart given a userId and an BookId
     void addItemToCart(Long userId, int bookId) throws Exception;
