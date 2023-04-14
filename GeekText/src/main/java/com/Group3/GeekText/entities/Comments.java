@@ -1,17 +1,12 @@
 package com.Group3.GeekText.entities;
 
-
-import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Date;
 
 @Entity
-@Table(name = "Ratings")
-
-public class Ratings {
-
+@Table(name = "Comments")
+public class Comments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -24,20 +19,20 @@ public class Ratings {
     @Column(name = "userID")
     private Integer userID;
 
-    @Column(name = "rating")
-    private Integer rating;
+    @Column(name = "comment")
+    private String comment;
 
     @Column(name = "datestamp")
     private Date datestamp;
 
     //Constructors
-    public Ratings(){}
+    public Comments(){}
 
-    public Ratings(Integer id, Integer bookID, Integer userID, Integer rating, Date datestamp) {
+    public Comments(Integer id, Integer bookID, Integer userID, String comment, Date datestamp) {
         this.id = id;
         this.bookID = bookID;
         this.userID = userID;
-        this.rating = rating;
+        this.comment = comment;
         this.datestamp = datestamp;
     }
 
@@ -65,12 +60,12 @@ public class Ratings {
         this.userID = userID;
     }
 
-    public Integer getRating() {
-        return rating;
+    public String getComment() {
+        return comment;
     }
 
-    public void setRating(Integer rating) {
-        this.rating = rating;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public Date getDatestamp() {
@@ -83,11 +78,12 @@ public class Ratings {
 
     @Override
     public String toString() {
-        return "Ratings{" +
-                "bookID=" + bookID +
+        return "Comments{" +
+                "id=" + id +
+                ", bookID=" + bookID +
                 ", userID=" + userID +
-                ", rating=" + rating +
+                ", comment='" + comment + '\'' +
+                ", datestamp=" + datestamp +
                 '}';
     }
-
 }
