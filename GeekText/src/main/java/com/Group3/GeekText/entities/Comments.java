@@ -7,7 +7,6 @@ import java.util.Date;
 @Entity
 @Table(name = "Comments")
 public class Comments {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
