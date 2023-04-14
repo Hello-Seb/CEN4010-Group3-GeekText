@@ -35,19 +35,6 @@ public class CommentsController {
         }
     }
 
-
-    /*
-    @GetMapping("/comments/{bookID}")
-    public ResponseEntity<List<Comments>> getCommentsByBookID(@PathVariable Integer bookID) {
-        try {
-            List<Comments> comments = commentsRepository.findByBookID(bookID);
-            return ResponseEntity.ok(comments);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
-
-     */
     @GetMapping("/comments/{bookID}")
     public ResponseEntity<List<String>> getCommentsByBookID(@PathVariable Integer bookID) {
         try {
