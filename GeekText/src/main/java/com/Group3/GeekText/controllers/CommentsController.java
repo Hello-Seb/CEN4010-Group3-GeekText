@@ -35,6 +35,7 @@ public class CommentsController {
         }
     }
 
+    // GET method for retrieving all comments created for a particular bookID
     @GetMapping("/comments/{bookID}")
     public ResponseEntity<List<String>> getCommentsByBookID(@PathVariable Integer bookID) {
         try {
@@ -44,8 +45,4 @@ public class CommentsController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
-
-
-
 }

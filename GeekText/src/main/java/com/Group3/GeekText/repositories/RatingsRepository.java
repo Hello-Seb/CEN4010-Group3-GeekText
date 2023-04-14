@@ -11,7 +11,6 @@ import java.util.List;
 
 @Repository
 public interface RatingsRepository extends JpaRepository<Ratings,Integer> {
-
-    @Query("SELECT r FROM Ratings r WHERE r.bookID = :bookID")
-    List<Ratings> findByBookID(@Param("bookID") Integer bookID);
+    @Query("SELECT AVG(r.rating) FROM Ratings r WHERE r.bookID = :bookID")
+    Double getAverageRatingByBookID(@Param("bookID") Integer bookID);
 }
